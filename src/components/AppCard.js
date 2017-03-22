@@ -5,6 +5,7 @@ import Checkbox from 'material-ui/Checkbox';
 import FlatButton from 'material-ui/FlatButton';
 import EditCard from './CardAction';
 import { deleteCard, toggleKnownUnknown } from '../actions';
+import { SvgIcon } from 'material-ui';
 
 export class AppCard extends Component {
   constructor(props){
@@ -40,6 +41,9 @@ export class AppCard extends Component {
             label="Delete"
             onTouchTap={this.handleDelete}
           />
+          {/*<i className="material-icons">edit</i>*/}
+          {/*<i className="material-icons">delete</i>*/}
+
         </CardActions>
         <CardText expandable={true}>
           {card.answer}

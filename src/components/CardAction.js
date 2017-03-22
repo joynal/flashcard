@@ -31,17 +31,18 @@ class CardAction extends React.Component {
       />,
     ];
 
-    const dialog = (
-      <Dialog
-        title={this.props.card ? 'Edit card' : "Add flashcard"}
-        actions={actions}
-        modal={false}
-        open={this.state.open}
-        onRequestClose={this.handleClose}
-      >
-        {this.props.card ? <CardForm card={this.props.card}/> : <CardForm /> }
-      </Dialog>
-    );
+    const dialog = <Dialog
+          title={this.props.card ? 'Edit card' : "Add flashcard"}
+          actions={actions}
+          modal={false}
+          open={this.state.open}
+          onRequestClose={this.handleClose}
+        >
+          {this.props.card ?
+            <CardForm
+              card={this.props.card}
+              handleClose={this.handleClose}/> : <CardForm handleClose={this.handleClose}/> }
+        </Dialog>;
 
     if (this.props.card) {
       return (

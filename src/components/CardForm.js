@@ -12,7 +12,6 @@ export class CardForm extends Component {
     this.state = {
       canSubmit: false,
     };
-    this.errorMessage = "Please only use letters";
   }
 
   enableButton = () => {
@@ -37,6 +36,7 @@ export class CardForm extends Component {
         ...data
       });
     }
+    this.props.handleClose();
   }
 
   notifyFormError = (data) => {
