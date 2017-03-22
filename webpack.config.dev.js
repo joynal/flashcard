@@ -1,7 +1,7 @@
-import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import autoprefixer from 'autoprefixer';
-import path from 'path';
+import webpack from 'webpack'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import autoprefixer from 'autoprefixer'
+import path from 'path'
 
 export default {
   resolve: {
@@ -44,7 +44,7 @@ export default {
           includePaths: [path.resolve(__dirname, 'src', 'scss')]
         },
         context: '/',
-        postcss: () => [autoprefixer],
+        postcss: () => [autoprefixer]
       }
     })
   ],
@@ -60,4 +60,4 @@ export default {
       {test: /(\.css|\.scss|\.sass)$/, loaders: ['style-loader', 'css-loader?sourceMap', 'postcss-loader', 'sass-loader?sourceMap']}
     ]
   }
-};
+}

@@ -23,4 +23,4 @@ module.exports = [
     name: 'description',
     description: 'Project description'
   }
-];
+]
