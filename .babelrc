@@ -7,7 +7,8 @@
     "development": {
       "presets": [
         "latest",
-        "react-hmre"
+        "react-hmre",
+        "stage-0"
       ]
     },
     "production": {

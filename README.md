@@ -1,5 +1,3 @@
-*** Flashcard
+## Flashcard
 
-Remember and bring information in your pocket
-
-coming soon ...
+Remember and keep information in your pocket. coming soon ...
