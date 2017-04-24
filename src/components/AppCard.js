@@ -7,10 +7,12 @@ import EditCard from './CardAction';
 import { deleteCard, toggleKnownUnknown } from '../actions';
 import '../styles/styles.scss'
 
+const actionsToState = dispatch => ({
+  deleteCard: id => dispatch(deleteCard(id)),
+  toggle: id => dispatch(toggleKnownUnknown(id)),
+});
+
 export class AppCard extends Component {
-  constructor(props){
-    super(props);
-  }
 
   handleDelete = () => {
     this.props.deleteCard(this.props.card.id);
@@ -50,11 +52,4 @@ export class AppCard extends Component {
   }
 }
 
-const mapDispatchToState = (dispatch) => {
-  return {
-    deleteCard: id => dispatch(deleteCard(id)),
-    toggle: id => dispatch(toggleKnownUnknown(id)),
-  };
-}
-
-export default connect(null, mapDispatchToState)(AppCard);
+export default connect(null, actionsToState)(AppCard);

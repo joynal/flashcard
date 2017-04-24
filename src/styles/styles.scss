@@ -13,13 +13,14 @@ body {
   right: 8px;
 }
 
-.middle {
-  vertical-align: middle;
-}
-
 .edit-button {
   display: inline-block;
 }
+
+.middle > * {
+  vertical-align: middle;
+}
+
 
 .card {
   display: flex;

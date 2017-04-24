@@ -1,4 +1,4 @@
-export let cards = [
+export default [
   {
     id: 1,
     title: 'Redux Action',

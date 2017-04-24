@@ -7,9 +7,9 @@ import AddCard from './CardAction'
 const App = () => (
   <MuiThemeProvider>
     <div>
-      <AppBar title='Flashcard' />
-      <Tabs />
-      <AddCard />
+      <AppBar title='Flashcard'/>
+      <Tabs/>
+      <AddCard/>
     </div>
   </MuiThemeProvider>
 )

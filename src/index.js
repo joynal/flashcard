@@ -6,14 +6,11 @@ import configureStore from './store/configureStore'
 import App from './components/App'
 import './styles/styles.scss'
 require('./favicon.ico')
-import { cards } from './data/AppData'
-import { addCard } from './actions'
+import cards from './data/cards'
+import { fetchCard } from './actions'
 
 const store = configureStore()
-
-cards.forEach(card => {
-  store.dispatch(addCard(card))
-})
+store.dispatch(fetchCard(cards))
 
 injectTapEventPlugin()
 

@@ -6,12 +6,15 @@ import { FormsyText } from 'formsy-material-ui/lib';
 import RaisedButton from 'material-ui/RaisedButton';
 import { addCard, editCard } from '../actions';
 
+const actionsToState = dispatch => ({
+  addNewCard: card =>  dispatch(addCard(card)),
+  editACard: (id, data) => dispatch(editCard(id, data)),
+});
+
+
 export class CardForm extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      canSubmit: false,
-    };
+  state = {
+    canSubmit: false,
   }
 
   enableButton = () => {
@@ -87,11 +90,4 @@ export class CardForm extends Component {
   }
 }
 
-const mapDispatchToState = ( dispatch ) => {
-  return {
-    addNewCard: card =>  dispatch(addCard(card)),
-    editACard: (id, data) => dispatch(editCard(id, data)),
-  }
-}
-
-export default connect(null, mapDispatchToState)(CardForm);
+export default connect(null, actionsToState)(CardForm);

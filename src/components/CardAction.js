@@ -7,11 +7,8 @@ import CardForm from './CardForm';
 import '../styles/styles.scss';
 
 class CardAction extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      open: false,
-    };
+  state = {
+    open: false,
   }
 
   handleOpen = () => {

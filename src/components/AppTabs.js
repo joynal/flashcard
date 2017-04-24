@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 import { Tabs, Tab } from 'material-ui/Tabs';
 import Card from './AppCard';
 
+const stateToProps = state => ({
+  cards: state.cards
+})
+
 class AppTabs extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: 'all',
-    };
+  state = {
+    value: 'all',
   }
 
   handleChange = (value) => {
@@ -17,17 +18,13 @@ class AppTabs extends React.Component {
     });
   }
 
-  dataFilteredView = (cards, flag) => {
-    return cards.map((card) => {
+  dataFilteredView = (cards, flag) => (
+    cards.map((card) => {
       if (card.known === flag) {
-        return (
-          <div key={card.id}>
-            <Card card={card}/>
-          </div>
-        );
+        return <Card card={card} key={card.id}/>;
       }
-    });
-  }
+    }
+  ))
 
 	render(){
 		return (
@@ -37,15 +34,9 @@ class AppTabs extends React.Component {
       >
         <Tab label="All" value="all">
           <div>
-            {
-              this.props.cards.map(function (card) {
-                return (
-                  <div key={card.id}>
-                    <Card card={card}/>
-                  </div>
-                );
-              })
-            }
+            {this.props.cards.map(card => (
+              <Card card={card} key={card.id}/>
+            ))}
           </div>
         </Tab>
         <Tab label="Known" value="known">
@@ -63,10 +54,4 @@ class AppTabs extends React.Component {
 	}
 }
 
-const mapStateToProps = (state) => {
-  return {
-    cards: state.cards
-  }
-}
-
-export default connect(mapStateToProps)(AppTabs);
+export default connect(stateToProps)(AppTabs);
