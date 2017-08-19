@@ -1,7 +1,8 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { Tabs, Tab } from 'material-ui/Tabs';
-import Card from './AppCard';
+import React from 'react'
+import { connect } from 'react-redux'
+import { Tabs, Tab } from 'material-ui/Tabs'
+
+import Card from './AppCard'
 
 const stateToProps = state => ({
   cards: state.cards
@@ -12,21 +13,17 @@ class AppTabs extends React.Component {
     value: 'all',
   }
 
-  handleChange = (value) => {
-    this.setState({
-      value: value,
-    });
-  }
+  handleChange = value => this.setState({ value })
 
   dataFilteredView = (cards, flag) => (
-    cards.map((card) => {
-      if (card.known === flag) {
-        return <Card card={card} key={card.id}/>;
-      }
+    cards.map(card => {
+      if (card.known === flag) return <Card card={card} key={card.id}/>
+
+      return null
     }
   ))
 
-	render(){
+	render() {
 		return (
 			<Tabs
         value={this.state.value}
@@ -50,8 +47,8 @@ class AppTabs extends React.Component {
           </div>
         </Tab>
 		  </Tabs>
-		);
+		)
 	}
 }
 
-export default connect(stateToProps)(AppTabs);
+export default connect(stateToProps)(AppTabs)

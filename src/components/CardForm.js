@@ -4,6 +4,7 @@ import Formsy from 'formsy-react';
 import { v4 } from 'uuid';
 import { FormsyText } from 'formsy-material-ui/lib';
 import RaisedButton from 'material-ui/RaisedButton';
+
 import { addCard, editCard } from '../actions';
 
 const actionsToState = dispatch => ({
@@ -11,23 +12,12 @@ const actionsToState = dispatch => ({
   editACard: (id, data) => dispatch(editCard(id, data)),
 });
 
+class CardForm extends Component {
+  state = { canSubmit: false }
 
-export class CardForm extends Component {
-  state = {
-    canSubmit: false,
-  }
+  enableButton = () => this.setState({ canSubmit: true })
 
-  enableButton = () => {
-    this.setState({
-      canSubmit: true,
-    });
-  }
-
-  disableButton = () => {
-    this.setState({
-      canSubmit: false,
-    });
-  }
+  disableButton = () => this.setState({ canSubmit: false })
 
   submitForm = (data) => {
     if (this.props.card) {

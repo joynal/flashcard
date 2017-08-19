@@ -3,21 +3,17 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
+
 import CardForm from './CardForm';
-import '../styles/styles.scss';
+
+import '../styles/styles.css';
 
 class CardAction extends React.Component {
-  state = {
-    open: false,
-  }
+  state = { open: false }
 
-  handleOpen = () => {
-    this.setState({open: true});
-  };
+  handleOpen = () => this.setState({ open: true })
 
-  handleClose = () => {
-    this.setState({open: false});
-  };
+  handleClose = () => this.setState({ open: false })
 
   render(){
     const actions = [
@@ -38,8 +34,11 @@ class CardAction extends React.Component {
           {this.props.card ?
             <CardForm
               card={this.props.card}
-              handleClose={this.handleClose}/> : <CardForm handleClose={this.handleClose}/> }
-        </Dialog>;
+              handleClose={this.handleClose}
+            />
+            :
+            <CardForm handleClose={this.handleClose}/> }
+        </Dialog>
 
     if (this.props.card) {
       return (

@@ -1,22 +1,28 @@
 import React from 'react'
-import { render } from 'react-dom'
+import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 import injectTapEventPlugin from 'react-tap-event-plugin'
+
+import registerServiceWorker from './registerServiceWorker';
 import configureStore from './store/configureStore'
+
 import App from './components/App'
-import './styles/styles.scss'
-require('./favicon.ico')
+
 import cards from './data/cards'
 import { fetchCard } from './actions'
+
+import './styles/styles.css'
 
 const store = configureStore()
 store.dispatch(fetchCard(cards))
 
 injectTapEventPlugin()
 
-render(
+ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('app')
+  document.getElementById('root')
 )
+
+registerServiceWorker();
