@@ -1,18 +1,12 @@
 {
-  "name": "Flashcard",
-  "version": "0.0.1",
+  "name": "test",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "formsy-material-ui": "^0.6.2",
-    "formsy-react": "^0.19.5",
-    "material-ui": "^0.19.0",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-redux": "^5.0.6",
-    "react-scripts": "1.0.11",
-    "react-tap-event-plugin": "^2.0.1",
-    "redux": "^3.7.2",
-    "uuid": "^3.1.0"
+    "antd": "^3.6.5",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-scripts": "1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
