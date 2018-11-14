@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Col, Icon, Checkbox } from "antd";
+import { Card, Col, Icon, Checkbox, Button } from "antd";
 
 import "./Card.css";
 
@@ -23,13 +23,13 @@ export default class extends Component {
               <p style={{ float: "right" }}>JavaScript</p>
               <div style={{ marginTop: "2em" }}>
                 <Checkbox onChange={onChange} style={{ float: "left" }} />
-                <h2 style={{ fontSize: "1.2em", marginLeft: "2em" }}>
+                <p style={{ fontSize: "1.2em", marginLeft: "2em" }}>
                   Rethinking the way we treat data and services
-                </h2>
+                </p>
               </div>
-              <div style={{ float: "right" }}>
-                <a style={{ marginRight: "1em" }}>Delete</a>
-                <a style={{ marginRight: "1em" }}>Edit</a>
+              <div>
+                <Button style={{ marginRight: "1em" }}>Delete</Button>
+                <Button style={{ marginRight: "1em" }}>Edit</Button>
                 <Icon
                   type="arrow-right"
                   onClick={() => this.flipCardHandler(true)}
